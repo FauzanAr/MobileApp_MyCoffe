@@ -1,13 +1,17 @@
 package android.jplas.mycoffee.bankofclass;
 
 import android.app.Activity;
+import android.content.Context;
 import android.jplas.mycoffee.R;
+import android.jplas.mycoffee.fragment.coffeeFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 public class CustomListAdapter extends ArrayAdapter {
 
@@ -17,8 +21,7 @@ public class CustomListAdapter extends ArrayAdapter {
     private final String[] infoArray;
 
     public CustomListAdapter(Activity context, String[] nameArrayParam, String[] infoArrayParam, Integer[] imageIDArrayParam){
-
-        super(context, R.layout.listview_row , nameArrayParam);
+        super(context,R.layout.listview_row, nameArrayParam);
 
         this.context=context;
         this.imageIDarray = imageIDArrayParam;
