@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/radio_group"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -23,22 +23,22 @@
             app:layout_constraintTop_toBottomOf="@+id/text_nama">
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radio_espresso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Espresso" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radio_cappucino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Cappucino" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radio_mocaccino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Mocaccino" />
         </RadioGroup>
 
         <EditText
@@ -86,7 +86,7 @@
             android:text="Jumlah :"
             app:layout_constraintBottom_toBottomOf="@+id/text_jumlah"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
 
         <Button
             android:id="@+id/button"
@@ -109,6 +109,6 @@
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
