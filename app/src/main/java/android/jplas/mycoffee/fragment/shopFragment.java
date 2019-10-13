@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,14 @@ public class shopFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
+        String nama = textNama.getText().toString();
+        int tipe = 0;
+        int checkId = radioGroup.getCheckedRadioButtonId();
+        if ((checkId != -1) && !TextUtils.isEmpty(nama)){
+            int jumlah = Integer.parseInt(textJumlah.getText().toString());
+            if(checkId == R.id.radio_cappucino){
+                tipe = Coffee
+            }
+        }
     }
 }
