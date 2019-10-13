@@ -36,6 +36,21 @@ public class resultFragment extends Fragment {
         textJumlah = view.findViewById(R.id.jumlah_result_text);
         textTotal = view.findViewById(R.id.total_result_text);
         textTipe = view.findViewById(R.id.tipe_result_text);
+
+        Bundle bundle = this.getArguments();
+
+        coffee = bundle.getParcelable("coffee");
+        textNama.setText(coffee.getNama());
+        textJumlah.setText(String.valueOf(coffee.getJumlah()));
+        textTotal.setText(String.valueOf(coffee.getTotal()));
+        if(coffee.getTipe()==0){
+            textTipe.setText("Cappucino");
+        }else if(coffee.getTipe()==1){
+            textTipe.setText("Espresso");
+        }else{
+            textTipe.setText("Mocaccino");
+        }
+
         return view;
     }
 
