@@ -5,18 +5,20 @@ import android.jplas.mycoffee.bankofclass.Coffee;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.jplas.mycoffee.R;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class resultFragment extends Fragment {
+public class resultFragment extends Fragment implements View.OnClickListener {
 
     View view;
     Coffee coffee;
@@ -51,7 +53,16 @@ public class resultFragment extends Fragment {
             textTipe.setText("Mocaccino");
         }
 
+        Button button = view.findViewById(R.id.button2);
+        button.setOnClickListener(this);
         return view;
     }
 
+    @Override
+    public void onClick(View view) {
+        FragmentTransaction fragmentTransaction = getActivity()
+                .getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, new shopFragment());
+        fragmentTransaction.commit();
+    }
 }
