@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Coffee implements Parcelable {
-    public final int CAPPUCINO = 0;
-    public final int ESPRESSO = 1;
-    public final int MOCACCINO = 2;
+    public static final int CAPPUCINO = 0;
+    public static final int ESPRESSO = 1;
+    public static final int MOCACCINO = 2;
 
     private String nama;
     private int jumlah, total, tipe;

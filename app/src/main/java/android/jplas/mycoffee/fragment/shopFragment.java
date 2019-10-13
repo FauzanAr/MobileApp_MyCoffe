@@ -1,9 +1,11 @@
 package android.jplas.mycoffee.fragment;
 
 
+import android.jplas.mycoffee.bankofclass.Coffee;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -54,8 +56,21 @@ public class shopFragment extends Fragment implements View.OnClickListener {
         if ((checkId != -1) && !TextUtils.isEmpty(nama)){
             int jumlah = Integer.parseInt(textJumlah.getText().toString());
             if(checkId == R.id.radio_cappucino){
-                tipe = Coffee
+                tipe = Coffee.CAPPUCINO;
+            }else if (checkId == R.id.radio_espresso){
+                tipe = Coffee.ESPRESSO;
+            }else{
+                tipe = Coffee.MOCACCINO;
             }
+            Coffee coffee = new Coffee(nama, jumlah, tipe);
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("coffee", coffee);
+            Fragment Result = new resultFragment();
+            Result.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getActivity()
+                    .getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, Result);
+            fragmentTransaction.commit();
         }
     }
 }
