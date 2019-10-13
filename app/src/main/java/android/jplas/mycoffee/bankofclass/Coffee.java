@@ -9,6 +9,15 @@ public class Coffee implements Parcelable {
     public static final int MOCACCINO = 2;
 
     private String nama;
+
+    public int getJumlah() {
+        return jumlah;
+    }
+
+    public int getTipe() {
+        return tipe;
+    }
+
     private int jumlah, total, tipe;
 
     public Coffee(String nama, int jumlah, int tipe) {
