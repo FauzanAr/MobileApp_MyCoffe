@@ -1,6 +1,7 @@
 package android.jplas.mycoffee.fragment;
 
 
+import android.jplas.mycoffee.bankofclass.Coffee;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,8 @@ import android.jplas.mycoffee.R;
  */
 public class resultFragment extends Fragment {
 
+    View view;
+    Coffee coffee;
 
     public resultFragment() {
         // Required empty public constructor
@@ -26,7 +29,9 @@ public class resultFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_result, container, false);
+        view = inflater.inflate(R.layout.fragment_result, container, false);
+
+        return view;
     }
 
 }
